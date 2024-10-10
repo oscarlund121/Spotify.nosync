@@ -1,0 +1,23 @@
+---
+const {header, text} = Astro.props
+---
+
+<article>
+<h2>{header}</h2>
+<p>{text}</p>
+<slot />
+</article>
+
+<style>
+    h2 {
+        font-weight: 200;
+        font-size: 1rem;
+    }
+    
+    p{
+        font-weight: 150;
+        font-size: 0.8rem;
+    }
+
+ 
+</style>
