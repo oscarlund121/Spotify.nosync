@@ -2,128 +2,91 @@
 import "../styles/style.css";
 import Navigation from "../components/Navigation.astro";
 import Card from "../components/Card.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Navigation />
-    <div class="bg-color">
-      <main>
-        <h1>Populære Kunstnere</h1>
-        <div class="card-container">
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/65/150/150"
-              alt=""
-            />
-            <Card header="Tobias Rahim" text="Kunstner" />
-          </div>
-
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/68/150/150"
-              alt=""
-            />
-            <Card header="Michael Jackson" text="Kunstner" />
-          </div>
-
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/76/150/150"
-              alt=""
-            />
-            <Card header="Lamin" text="Kunstner" />
-          </div>
-
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/240/150/150"
-              alt=""
-            />
-            <Card header="The Weeknd" text="Kunstner" />
-          </div>
-
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/331/150/150"
-              alt=""
-            />
-            <Card header="Medina" text="Kunstner" />
-          </div>
-
-          <div class="card">
-            <img
-              class="pop-img"
-              src="https://picsum.photos/id/325/150/150"
-              alt=""
-            />
-            <Card header="Billie Eilish" text="Kunstner" />
-          </div>
-        </div>
-
-        <h1>Populære Albums</h1>
-        <div class="card-container">
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=7&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="A Little Bit Longer" text="Jonas Brothers" />
-          </div>
-
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="Bangerz" text="Miley Cyrus" />
-          </div>
-
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="Swagga Like Us" text="Jay-Z" />
-          </div>
-
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=5&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="The Greatest Hits Collection" text="Alan Jackson" />
-          </div>
-
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=6&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="The Essential" text="Michael Jackson" />
-          </div>
-
-          <div class="card">
-            <img
-              src="https://via.assets.so/album.png?id=8&q=95&w=360&h=360&fit=fill"
-              alt=""
-            />
-            <Card header="Rebirth" text="Lil Wayne" />
-          </div>
-        </div>
-      </main>
+<MainLayout>
+  <h1>Populære Kunstnere</h1>
+  <div class="card-container">
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/65/150/150" alt="" />
+      <Card header="Tobias Rahim" text="Kunstner" />
     </div>
-  </body>
-</html>
+
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/68/150/150" alt="" />
+      <Card header="Michael Jackson" text="Kunstner" />
+    </div>
+
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/76/150/150" alt="" />
+      <Card header="Lamin" text="Kunstner" />
+    </div>
+
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/240/150/150" alt="" />
+      <Card header="The Weeknd" text="Kunstner" />
+    </div>
+
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/331/150/150" alt="" />
+      <Card header="Medina" text="Kunstner" />
+    </div>
+
+    <div class="card">
+      <img class="pop-img" src="https://picsum.photos/id/325/150/150" alt="" />
+      <Card header="Billie Eilish" text="Kunstner" />
+    </div>
+  </div>
+
+  <h1>Populære Albums</h1>
+  <div class="card-container">
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=7&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="A Little Bit Longer" text="Jonas Brothers" />
+    </div>
+
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="Bangerz" text="Miley Cyrus" />
+    </div>
+
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="Swagga Like Us" text="Jay-Z" />
+    </div>
+
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=5&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="The Greatest Hits Collection" text="Alan Jackson" />
+    </div>
+
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=6&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="The Essential" text="Michael Jackson" />
+    </div>
+
+    <div class="card">
+      <img
+        src="https://via.assets.so/album.png?id=8&q=95&w=360&h=360&fit=fill"
+        alt=""
+      />
+      <Card header="Rebirth" text="Lil Wayne" />
+    </div>
+  </div>
+</MainLayout>
