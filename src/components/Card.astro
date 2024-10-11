@@ -1,23 +1,73 @@
 ---
-const {header, text} = Astro.props
+const artists = await fetch(
+  "https://fetch-with-astro.netlify.app/api/artists"
+).then((res) => res.json());
+console.log(artists);
+
+const artist = artists.filter(
+  (artist, index, self) => index === self.findIndex((a) => a.id === artist.id)
+);
+
+/* const header = goldie.title;
+const text = goldie.content;
+const img = goldie.og_image.url; */
 ---
 
-<article>
-<h2>{header}</h2>
-<p>{text}</p>
-<slot />
-</article>
+<div class="grid-container">
+  {
+    artist.map((artist) => (
+      <div class="card">
+        <img class="pop-img" src={artist.og_image.url} alt={artist.title} />
+        <h2>{artist.title}</h2>
+        <p>{artist.slug}</p>
+        <a href={artist.link}>Læs mere</a>
+      </div>
+    ))
+  }
+</div>
 
 <style>
-    h2 {
-        font-weight: 200;
-        font-size: 1rem;
-    }
-    
-    p{
-        font-weight: 150;
-        font-size: 0.8rem;
-    }
+  h2 {
+    font-weight: 200;
+    font-size: 1rem;
+  }
 
- 
+  p {
+    font-weight: 150;
+    font-size: 0.8rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Seks kolonner */
+    gap: 20px; /* Afstand mellem kortene */
+  }
+  .card {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: left;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .card:hover {
+    background-color: rgb(21, 19, 17);
+    opacity: 0.8;
+  }
+
+  img {
+    max-width: 100%;
+    width: 50%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .pop-img {
+    border-radius: 50%;
+    margin-left: 11%;
+  }
 </style>

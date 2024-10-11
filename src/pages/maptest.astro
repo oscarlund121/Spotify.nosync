@@ -1,0 +1,17 @@
+---
+const artists = await fetch(
+  "https://fetch-with-astro.netlify.app/api/artists"
+).then((res) => res.json());
+console.log(artists);
+---
+
+<ul>
+  {
+    artists.map((artist) => (
+      <li>
+        <h3>{artist.title}</h3>
+        <p>{artist.type}</p>
+      </li>
+    ))
+  }
+</ul>
